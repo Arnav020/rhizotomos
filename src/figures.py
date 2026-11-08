@@ -51,9 +51,9 @@ ax.hlines(yy, v.background_specificity * 100, v.specificity * 100, color="#ccc",
 ax.scatter(v.background_specificity * 100, yy, c="#B5AE9F", s=22, label="negative controls (same taxon, unrelated use)", zorder=3)
 ax.scatter(v.specificity * 100, yy, c="#111111", s=22, label="Dioscoridean claim", zorder=3)
 ax.set_yticks(yy, [f"{r.candidate_binomial} · {r.indication_category}" for _, r in v.iterrows()], fontsize=6)
-ax.set_xscale("symlog", linthresh=0.1)
+ax.set_xscale("symlog", linthresh=0.1); ax.set_xlim(left=0)
 ax.set_xlabel("% of the taxon's PubMed literature that mentions the use")
-ax.legend(frameon=False, fontsize=8, loc="lower right")
+ax.legend(frameon=False, fontsize=8, loc="upper left", bbox_to_anchor=(0.01, 0.99))
 ax.set_title(f"{val['claims_more_specific_than_controls']}/{val['n_claims']} claims beat their controls · "
              f"permutation p = {val['signflip_permutation_p']:.4f}", fontsize=10)
 fig.tight_layout(); fig.savefig(OUT / "fig_controls.png"); plt.close(fig)
