@@ -63,6 +63,9 @@ tbody tr{cursor:pointer;transition:background .3s var(--ease)}tbody tr:hover{bac
 .dark{background:var(--dark);color:#F4EFE6;border-radius:24px;padding:48px}.dark h2{color:#F4EFE6}.dark p,.dark li{color:#BDB7AA}.dark ul{margin:0;padding-left:20px;display:grid;gap:12px;font-size:14px;line-height:20px}
 footer{padding:48px 0 64px;font-size:12px;line-height:16px;color:var(--mute)}footer p{max-width:760px}
 .rise{opacity:0;transform:translateY(32px);transition:opacity .7s var(--ease),transform .7s var(--ease)}.rise.in{opacity:1;transform:none}
+.tbtn{pointer-events:auto;display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border:0;border-radius:9999px;background:var(--ink);color:var(--bg);cursor:pointer;margin-left:4px;transition:transform .5s var(--ease)}
+.tbtn:hover{transform:rotate(-20deg) scale(1.06)}.tbtn:active{transform:scale(.94)}
+:root[data-theme="dark"] select,:root[data-theme="dark"] input{box-shadow:inset 3px 3px 6px rgba(0,0,0,.5),inset -3px -3px 6px rgba(255,255,255,.04)}
 /* claymorphism */
 :root{--clay:12px 12px 28px rgba(120,96,60,.22),-10px -10px 24px rgba(255,255,255,.85),inset 3px 3px 6px rgba(255,255,255,.9),inset -4px -4px 8px rgba(120,96,60,.10)}
 :root[data-theme="dark"]{--clay:12px 12px 28px rgba(0,0,0,.6),-8px -8px 20px rgba(255,255,255,.04),inset 2px 2px 4px rgba(255,255,255,.06),inset -3px -3px 6px rgba(0,0,0,.4)}
@@ -92,7 +95,7 @@ select,input{border:0;border-radius:16px;box-shadow:inset 4px 4px 8px rgba(120,9
 </head>
 <body>
 <a class="skip" href="#atlas">Skip to the atlas</a>
-<nav aria-label="Primary"><div class="bar"><a class="brand" href="#top">Rhizotomos<span>.</span></a><a href="#method">Method</a><a href="#atlas">Atlas</a><a href="#validation">Validation</a><a href="https://github.com/Arnav020/rhizotomos" target="_blank" rel="noopener">Code</a></div></nav>
+<nav aria-label="Primary"><div class="bar"><a class="brand" href="#top">Rhizotomos<span>.</span></a><a href="#method">Method</a><a href="#atlas">Atlas</a><a href="#validation">Validation</a><a href="https://github.com/Arnav020/rhizotomos" target="_blank" rel="noopener">Code</a><button id="theme" class="tbtn" aria-label="Switch between light and dark mode"><svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path id="ti" d="M233.5 154.2A104 104 0 1 1 101.8 22.5a8 8 0 0 1 10 10A88 88 0 0 0 223.5 144.2a8 8 0 0 1 10 10Z"/></svg></button></div></nav>
 <main id="top">
 <header class="wrap hero">
   <div>
@@ -164,6 +167,15 @@ select,input{border:0;border-radius:16px;box-shadow:inset 4px 4px 8px rgba(120,9
 <footer class="wrap"><p>Data: GBIF Backbone Taxonomy and occurrence API (CC BY 4.0, gbif.org) · NCBI PubMed E-utilities (counts only) · claims paraphrased from Dioscorides, De Materia Medica (public domain) · EMA/HMPC monograph overlap flags curated by the team. Code under the MIT licence. Research prototype by Arnav Joshi for EthnoHack 2026.</p><p><a href="https://github.com/Arnav020/rhizotomos">Source and licences</a> · <a href="https://github.com/Arnav020/rhizotomos#assumptions-limitations-uncertainty">Limitations</a></p></footer>
 <script src="data.js"></script>
 <script>
+(function(){const root=document.documentElement;let saved=null;try{saved=localStorage.getItem('rh-theme')}catch(e){}
+if(saved)root.dataset.theme=saved;
+const cur=()=>root.dataset.theme||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+const SUN='M120 40V16a8 8 0 0 1 16 0v24a8 8 0 0 1-16 0Zm8 24a64 64 0 1 0 64 64 64.07 64.07 0 0 0-64-64Zm-69.66 5.66a8 8 0 0 0 11.32-11.32l-16-16a8 8 0 0 0-11.32 11.32Zm0 116.68-16 16a8 8 0 0 0 11.32 11.32l16-16a8 8 0 0 0-11.32-11.32ZM192 72a8 8 0 0 0 5.66-2.34l16-16a8 8 0 0 0-11.32-11.32l-16 16A8 8 0 0 0 192 72Zm5.66 114.34a8 8 0 0 0-11.32 11.32l16 16a8 8 0 0 0 11.32-11.32ZM48 128a8 8 0 0 0-8-8H16a8 8 0 0 0 0 16h24a8 8 0 0 0 8-8Zm80 80a8 8 0 0 0-8 8v24a8 8 0 0 0 16 0v-24a8 8 0 0 0-8-8Zm112-88h-24a8 8 0 0 0 0 16h24a8 8 0 0 0 0-16Z';
+const MOON=document.getElementById('ti').getAttribute('d');
+const icon=()=>document.getElementById('ti').setAttribute('d',cur()==='dark'?SUN:MOON);icon();
+document.getElementById('theme').onclick=()=>{const t=cur()==='dark'?'light':'dark';root.dataset.theme=t;try{localStorage.setItem('rh-theme',t)}catch(e){}icon();redraw()};
+})();
+function redraw(){document.querySelectorAll('.dot').forEach(d=>{const r=R[+d.dataset.i];d.setAttribute('fill',COL(r))})}
 const D=window.RHIZO,R=D.rows,V=D.validation;
 const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const isGap=r=>r.status==='Translational gap';
