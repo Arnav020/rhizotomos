@@ -66,7 +66,8 @@ python src/pipeline.py          # uses cached raw_*.json; add --refresh to re-qu
 python src/score.py             # scores, validation, docs/data.js
 python src/figures.py           # figures for the slides
 python src/make_deck.py         # 10-slide deck -> PDF + PNG (needs: playwright install chromium)
-python video/make_video.py      # narrated pitch video (needs ffmpeg + Kokoro ONNX model files)
+python video/make_video.py      # narrated pitch video (needs ffmpeg + Kokoro ONNX model files, voice am_fenrir)
+python video/add_captions.py    # burn in captions
 ```
 
 API results are cached in `data/raw_*.json`, so the analysis can be rerun offline exactly. Running `--refresh` gives today's PubMed counts, which grow over time.
