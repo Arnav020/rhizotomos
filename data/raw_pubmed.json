@@ -1,0 +1,206 @@
+{
+ "D01": {
+  "taxon_total": 1812,
+  "pair_all": 149,
+  "pair_clinical": 11,
+  "pair_synthesis": 4
+ },
+ "D02": {
+  "taxon_total": 579,
+  "pair_all": 78,
+  "pair_clinical": 0,
+  "pair_synthesis": 1
+ },
+ "D03": {
+  "taxon_total": 18,
+  "pair_all": 2,
+  "pair_clinical": 0,
+  "pair_synthesis": 0
+ },
+ "D04": {
+  "taxon_total": 148,
+  "pair_all": 7,
+  "pair_clinical": 2,
+  "pair_synthesis": 0
+ },
+ "D05": {
+  "taxon_total": 747,
+  "pair_all": 10,
+  "pair_clinical": 1,
+  "pair_synthesis": 0
+ },
+ "D06": {
+  "taxon_total": 1311,
+  "pair_all": 60,
+  "pair_clinical": 2,
+  "pair_synthesis": 2
+ },
+ "D07": {
+  "taxon_total": 2810,
+  "pair_all": 661,
+  "pair_clinical": 44,
+  "pair_synthesis": 34
+ },
+ "D08": {
+  "taxon_total": 2473,
+  "pair_all": 63,
+  "pair_clinical": 1,
+  "pair_synthesis": 1
+ },
+ "D09": {
+  "taxon_total": 344,
+  "pair_all": 52,
+  "pair_clinical": 4,
+  "pair_synthesis": 1
+ },
+ "D10": {
+  "taxon_total": 486,
+  "pair_all": 44,
+  "pair_clinical": 3,
+  "pair_synthesis": 0
+ },
+ "D11": {
+  "taxon_total": 379,
+  "pair_all": 100,
+  "pair_clinical": 3,
+  "pair_synthesis": 2
+ },
+ "D12": {
+  "taxon_total": 1942,
+  "pair_all": 30,
+  "pair_clinical": 0,
+  "pair_synthesis": 1
+ },
+ "D13": {
+  "taxon_total": 445,
+  "pair_all": 19,
+  "pair_clinical": 3,
+  "pair_synthesis": 0
+ },
+ "D14": {
+  "taxon_total": 3138,
+  "pair_all": 13,
+  "pair_clinical": 1,
+  "pair_synthesis": 0
+ },
+ "D15": {
+  "taxon_total": 2347,
+  "pair_all": 124,
+  "pair_clinical": 17,
+  "pair_synthesis": 22
+ },
+ "D16": {
+  "taxon_total": 4252,
+  "pair_all": 1,
+  "pair_clinical": 0,
+  "pair_synthesis": 0
+ },
+ "D17": {
+  "taxon_total": 274,
+  "pair_all": 86,
+  "pair_clinical": 20,
+  "pair_synthesis": 12
+ },
+ "D18": {
+  "taxon_total": 149,
+  "pair_all": 3,
+  "pair_clinical": 1,
+  "pair_synthesis": 0
+ },
+ "D19": {
+  "taxon_total": 1170,
+  "pair_all": 30,
+  "pair_clinical": 1,
+  "pair_synthesis": 0
+ },
+ "D20": {
+  "taxon_total": 1052,
+  "pair_all": 24,
+  "pair_clinical": 0,
+  "pair_synthesis": 2
+ },
+ "D21": {
+  "taxon_total": 1004,
+  "pair_all": 11,
+  "pair_clinical": 0,
+  "pair_synthesis": 0
+ },
+ "D22": {
+  "taxon_total": 154,
+  "pair_all": 3,
+  "pair_clinical": 0,
+  "pair_synthesis": 0
+ },
+ "D23": {
+  "taxon_total": 141,
+  "pair_all": 20,
+  "pair_clinical": 0,
+  "pair_synthesis": 0
+ },
+ "D24": {
+  "taxon_total": 63,
+  "pair_all": 0,
+  "pair_clinical": 0,
+  "pair_synthesis": 0
+ },
+ "D25": {
+  "taxon_total": 2534,
+  "pair_all": 21,
+  "pair_clinical": 0,
+  "pair_synthesis": 0
+ },
+ "D26": {
+  "taxon_total": 53,
+  "pair_all": 8,
+  "pair_clinical": 0,
+  "pair_synthesis": 0
+ },
+ "D27": {
+  "taxon_total": 2,
+  "pair_all": 0,
+  "pair_clinical": 0,
+  "pair_synthesis": 0
+ },
+ "D28": {
+  "taxon_total": 67,
+  "pair_all": 1,
+  "pair_clinical": 0,
+  "pair_synthesis": 0
+ },
+ "D29": {
+  "taxon_total": 459,
+  "pair_all": 9,
+  "pair_clinical": 0,
+  "pair_synthesis": 0
+ },
+ "D30": {
+  "taxon_total": 302,
+  "pair_all": 7,
+  "pair_clinical": 0,
+  "pair_synthesis": 0
+ },
+ "D31": {
+  "taxon_total": 457,
+  "pair_all": 9,
+  "pair_clinical": 0,
+  "pair_synthesis": 0
+ },
+ "D32": {
+  "taxon_total": 166,
+  "pair_all": 28,
+  "pair_clinical": 1,
+  "pair_synthesis": 5
+ },
+ "D33": {
+  "taxon_total": 23,
+  "pair_all": 2,
+  "pair_clinical": 1,
+  "pair_synthesis": 0
+ },
+ "D34": {
+  "taxon_total": 168,
+  "pair_all": 31,
+  "pair_clinical": 0,
+  "pair_synthesis": 0
+ }
+}

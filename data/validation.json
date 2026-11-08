@@ -1,0 +1,27 @@
+{
+ "n_claims": 33,
+ "claims_more_specific_than_controls": 21,
+ "median_lift": 1.7330034817665387,
+ "wilcoxon_p": 0.01126621801345896,
+ "signflip_permutation_p": 0.01544922753862307,
+ "hmpc_overlap_n": 11,
+ "hmpc_tier_auc": 0.8243801652892562,
+ "hmpc_mannwhitney_p": 0.0007942237517774635,
+ "robust_high_medium_names_n": 30,
+ "robust_wilcoxon_p": 0.01920920889824629,
+ "tier_counts": {
+  "0": 2,
+  "1": 14,
+  "2": 8,
+  "3": 9
+ },
+ "status_counts": {
+  "Clinically explored": 9,
+  "Weak signal": 8,
+  "Early clinical": 7,
+  "Translational gap": 4,
+  "Translated via compound": 3,
+  "Historical only": 2,
+  "Post-Dioscoridean use": 1
+ }
+}

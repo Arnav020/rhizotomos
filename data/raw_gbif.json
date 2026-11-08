@@ -1,0 +1,342 @@
+{
+ "Hypericum perforatum": {
+  "gbif_key": 3189486,
+  "gbif_scientific_name": "Hypericum perforatum L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 100,
+  "family": "Hypericaceae",
+  "occ_global": 935957,
+  "occ_greece": 798
+ },
+ "Papaver somniferum": {
+  "gbif_key": 2888439,
+  "gbif_scientific_name": "Papaver somniferum L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 100,
+  "family": "Papaveraceae",
+  "occ_global": 126726,
+  "occ_greece": 33
+ },
+ "Mandragora officinarum": {
+  "gbif_key": 5341748,
+  "gbif_scientific_name": "Mandragora officinarum L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 99,
+  "family": "Solanaceae",
+  "occ_global": 4868,
+  "occ_greece": 447
+ },
+ "Hyoscyamus niger": {
+  "gbif_key": 2928978,
+  "gbif_scientific_name": "Hyoscyamus niger L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 100,
+  "family": "Solanaceae",
+  "occ_global": 50449,
+  "occ_greece": 37
+ },
+ "Foeniculum vulgare": {
+  "gbif_key": 3034922,
+  "gbif_scientific_name": "Foeniculum vulgare Mill.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 99,
+  "family": "Apiaceae",
+  "occ_global": 168042,
+  "occ_greece": 865
+ },
+ "Glycyrrhiza glabra": {
+  "gbif_key": 2965732,
+  "gbif_scientific_name": "Glycyrrhiza glabra L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 99,
+  "family": "Fabaceae",
+  "occ_global": 6493,
+  "occ_greece": 60
+ },
+ "Aloe vera": {
+  "gbif_key": 2777724,
+  "gbif_scientific_name": "Aloe vera (L.) Burm.f.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 99,
+  "family": "Asphodelaceae",
+  "occ_global": 5165,
+  "occ_greece": 29
+ },
+ "Allium sativum": {
+  "gbif_key": 2856681,
+  "gbif_scientific_name": "Allium sativum L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 100,
+  "family": "Amaryllidaceae",
+  "occ_global": 12896,
+  "occ_greece": 71
+ },
+ "Plantago major": {
+  "gbif_key": 3189767,
+  "gbif_scientific_name": "Plantago major L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 99,
+  "family": "Plantaginaceae",
+  "occ_global": 1343915,
+  "occ_greece": 452
+ },
+ "Achillea millefolium": {
+  "gbif_key": 3120060,
+  "gbif_scientific_name": "Achillea millefolium L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 99,
+  "family": "Asteraceae",
+  "occ_global": 1872669,
+  "occ_greece": 140
+ },
+ "Artemisia absinthium": {
+  "gbif_key": 3121319,
+  "gbif_scientific_name": "Artemisia absinthium L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 100,
+  "family": "Asteraceae",
+  "occ_global": 110813,
+  "occ_greece": 44
+ },
+ "Punica granatum": {
+  "gbif_key": 5420901,
+  "gbif_scientific_name": "Punica granatum L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 100,
+  "family": "Lythraceae",
+  "occ_global": 53471,
+  "occ_greece": 1778
+ },
+ "Pistacia lentiscus": {
+  "gbif_key": 3190583,
+  "gbif_scientific_name": "Pistacia lentiscus L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 100,
+  "family": "Anacardiaceae",
+  "occ_global": 288098,
+  "occ_greece": 5093
+ },
+ "Ricinus communis": {
+  "gbif_key": 5380041,
+  "gbif_scientific_name": "Ricinus communis L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 100,
+  "family": "Euphorbiaceae",
+  "occ_global": 105471,
+  "occ_greece": 965
+ },
+ "Zingiber officinale": {
+  "gbif_key": 2757280,
+  "gbif_scientific_name": "Zingiber officinale Roscoe",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 100,
+  "family": "Zingiberaceae",
+  "occ_global": 2181,
+  "occ_greece": 0
+ },
+ "Cannabis sativa": {
+  "gbif_key": 5361880,
+  "gbif_scientific_name": "Cannabis sativa L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 100,
+  "family": "Cannabaceae",
+  "occ_global": 33818,
+  "occ_greece": 12
+ },
+ "Vitex agnus-castus": {
+  "gbif_key": 2925562,
+  "gbif_scientific_name": "Vitex agnus-castus L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 99,
+  "family": "Lamiaceae",
+  "occ_global": 35141,
+  "occ_greece": 3222
+ },
+ "Marrubium vulgare": {
+  "gbif_key": 2927069,
+  "gbif_scientific_name": "Marrubium vulgare L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 100,
+  "family": "Lamiaceae",
+  "occ_global": 126072,
+  "occ_greece": 302
+ },
+ "Thymus vulgaris": {
+  "gbif_key": 5341442,
+  "gbif_scientific_name": "Thymus vulgaris L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 99,
+  "family": "Lamiaceae",
+  "occ_global": 123366,
+  "occ_greece": 17
+ },
+ "Salvia officinalis": {
+  "gbif_key": 2927004,
+  "gbif_scientific_name": "Salvia officinalis L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 99,
+  "family": "Lamiaceae",
+  "occ_global": 35404,
+  "occ_greece": 167
+ },
+ "Origanum vulgare": {
+  "gbif_key": 2926612,
+  "gbif_scientific_name": "Origanum vulgare L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 99,
+  "family": "Lamiaceae",
+  "occ_global": 448068,
+  "occ_greece": 538
+ },
+ "Lavandula stoechas": {
+  "gbif_key": 2927303,
+  "gbif_scientific_name": "Lavandula stoechas L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 100,
+  "family": "Lamiaceae",
+  "occ_global": 231380,
+  "occ_greece": 701
+ },
+ "Gentiana lutea": {
+  "gbif_key": 3170040,
+  "gbif_scientific_name": "Gentiana lutea L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 99,
+  "family": "Gentianaceae",
+  "occ_global": 127211,
+  "occ_greece": 11
+ },
+ "Cistus creticus": {
+  "gbif_key": 6438085,
+  "gbif_scientific_name": "Cistus creticus L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 99,
+  "family": "Cistaceae",
+  "occ_global": 19135,
+  "occ_greece": 2930
+ },
+ "Nigella sativa": {
+  "gbif_key": 5371700,
+  "gbif_scientific_name": "Nigella sativa L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 100,
+  "family": "Ranunculaceae",
+  "occ_global": 1540,
+  "occ_greece": 4
+ },
+ "Sideritis scardica": {
+  "gbif_key": 7307419,
+  "gbif_scientific_name": "Sideritis scardica Griseb.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 100,
+  "family": "Lamiaceae",
+  "occ_global": 274,
+  "occ_greece": 124
+ },
+ "Ferula drudeana": {
+  "gbif_key": 6307753,
+  "gbif_scientific_name": "Ferula drudeana Korovin",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 100,
+  "family": "Apiaceae",
+  "occ_global": 16,
+  "occ_greece": 0
+ },
+ "Veratrum album": {
+  "gbif_key": 2742119,
+  "gbif_scientific_name": "Veratrum album L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 99,
+  "family": "Melanthiaceae",
+  "occ_global": 91127,
+  "occ_greece": 26
+ },
+ "Myrtus communis": {
+  "gbif_key": 3180085,
+  "gbif_scientific_name": "Myrtus communis L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 99,
+  "family": "Myrtaceae",
+  "occ_global": 54226,
+  "occ_greece": 1381
+ },
+ "Juniperus communis": {
+  "gbif_key": 2684709,
+  "gbif_scientific_name": "Juniperus communis L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 99,
+  "family": "Cupressaceae",
+  "occ_global": 822946,
+  "occ_greece": 209
+ },
+ "Mentha spicata": {
+  "gbif_key": 2927175,
+  "gbif_scientific_name": "Mentha spicata L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 99,
+  "family": "Lamiaceae",
+  "occ_global": 52339,
+  "occ_greece": 485
+ },
+ "Salix alba": {
+  "gbif_key": 5372513,
+  "gbif_scientific_name": "Salix alba L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 99,
+  "family": "Salicaceae",
+  "occ_global": 373830,
+  "occ_greece": 276
+ },
+ "Paeonia officinalis": {
+  "gbif_key": 3083488,
+  "gbif_scientific_name": "Paeonia officinalis L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 99,
+  "family": "Paeoniaceae",
+  "occ_global": 15684,
+  "occ_greece": 4
+ },
+ "Colchicum autumnale": {
+  "gbif_key": 2739622,
+  "gbif_scientific_name": "Colchicum autumnale L.",
+  "gbif_status": "ACCEPTED",
+  "gbif_match_type": "EXACT",
+  "gbif_confidence": 99,
+  "family": "Colchicaceae",
+  "occ_global": 178361,
+  "occ_greece": 94
+ }
+}

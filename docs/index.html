@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rhizotomos Atlas</title>
+<meta name="description" content="Which of Dioscorides' 2,000 year old remedies has modern science tested? An auditable atlas linking De Materia Medica claims to GBIF taxa and PubMed evidence.">
+<meta property="og:title" content="Rhizotomos: a translational gap atlas of De Materia Medica">
+<meta property="og:description" content="Historical claims, resolved taxa, live PubMed evidence, negative controls.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23111'/><path d='M16 6v20M16 14c-4-4-8-3-8-3s1 5 8 6M16 18c4-4 8-3 8-3s-1 5-8 6' stroke='%23E8590C' stroke-width='2' fill='none'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4EFE6;--card:#FBF8F2;--ink:#111111;--ink2:#3A3A36;--mute:#77746B;--line:#E2DACB;--acc:#E8590C;--dark:#111111;--t0:#CFC8B8;--t1:#9C978C;--t2:#4A4843;--t3:#111111;--ease:cubic-bezier(.22,1,.36,1)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#131209;--card:#1F1F1F;--ink:#F4EFE6;--ink2:#D9D3C7;--mute:#9B978D;--line:#313131;--dark:#000000;--t0:#4A4843;--t1:#77746B;--t2:#BDB7AA;--t3:#F4EFE6}}
+:root[data-theme="dark"]{--bg:#131209;--card:#1F1F1F;--ink:#F4EFE6;--ink2:#D9D3C7;--mute:#9B978D;--line:#313131;--dark:#000000;--t0:#4A4843;--t1:#77746B;--t2:#BDB7AA;--t3:#F4EFE6}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,sans-serif;font-size:16px;line-height:24px;-webkit-font-smoothing:antialiased}
+a{color:inherit}.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:var(--ink);color:var(--bg);padding:8px 12px;border-radius:8px;z-index:9}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:16px;z-index:5;display:flex;justify-content:center;pointer-events:none}
+nav .bar{pointer-events:auto;display:flex;gap:4px;align-items:center;padding:4px;border-radius:9999px;background:color-mix(in srgb,var(--card) 72%,transparent);backdrop-filter:blur(16px);border:1px solid var(--line)}
+nav a{font-size:14px;line-height:20px;font-weight:500;text-decoration:none;padding:8px 12px;border-radius:9999px;transition:background .3s var(--ease)}
+nav a:hover{background:var(--line)}nav a.brand{font-weight:600}nav a.brand span{color:var(--acc)}
+nav a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,tr:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.hero{padding:96px 0 48px}
+.eyebrow{font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+h1{font-size:60px;line-height:60px;font-weight:600;letter-spacing:-.02em;margin:16px 0 24px;max-width:680px;text-wrap:balance;background:linear-gradient(90deg,var(--ink),color-mix(in srgb,var(--ink) 55%,var(--bg)));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{font-size:18px;line-height:28px;color:var(--ink2);max-width:680px;margin:0;text-wrap:pretty}
+.cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 16px/24px Manrope,sans-serif;padding:8px 12px;border-radius:12px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);text-decoration:none;cursor:pointer;transition:transform .3s var(--ease),opacity .3s var(--ease)}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:scale(.98)}.btn.ghost{background:transparent;color:var(--ink)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:48px 0 0}
+.k{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+.k b{display:block;font-size:36px;line-height:40px;font-weight:600;letter-spacing:-.02em}.k b.o{color:var(--acc)}
+.k span{display:block;margin-top:8px;font-size:14px;line-height:20px;color:var(--mute)}
+section{padding:64px 0}h2{font-size:36px;line-height:40px;font-weight:600;letter-spacing:-.02em;margin:12px 0 16px;text-wrap:balance;max-width:760px}
+.sec-lede{color:var(--ink2);max-width:680px;margin:0 0 32px;text-wrap:pretty}
+.reveal-sec{padding:96px 0}.reveal{font-size:48px;line-height:48px;font-weight:600;letter-spacing:-.02em;max-width:900px;margin:0}
+.reveal .w{opacity:.28;transition:opacity .6s var(--ease)}.reveal .w.on{opacity:1}.reveal .w.acc{color:var(--acc)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+.step .n{font-size:12px;line-height:16px;font-weight:600;color:var(--acc)}.step h3{font-size:20px;line-height:28px;font-weight:600;margin:8px 0}.step p{margin:0;font-size:14px;line-height:20px;color:var(--mute)}
+.grid{display:grid;grid-template-columns:1.25fr 1fr;gap:16px}@media(max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:48px;line-height:48px}.reveal{font-size:36px;line-height:40px}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;min-width:0}
+.card h3{font-size:18px;line-height:28px;font-weight:600;margin:0 0 8px}
+svg text{fill:var(--mute);font-size:11px;font-family:Manrope,sans-serif}
+.dot{cursor:pointer;stroke:var(--card);stroke-width:1.5;transition:opacity .3s var(--ease)}.dot.sel{stroke:var(--acc);stroke-width:3}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;line-height:16px;color:var(--mute);margin-bottom:8px}.sw{display:inline-block;width:10px;height:10px;border-radius:9999px;margin-right:4px;vertical-align:-1px}
+#detail .tag{display:inline-block;font-size:12px;line-height:16px;font-weight:600;padding:4px 8px;border-radius:9999px;background:var(--ink);color:var(--bg)}
+#detail .tag.gap{background:var(--acc);color:#fff}
+#detail dl{margin:16px 0 0;display:grid;grid-template-columns:1fr;gap:12px}#detail dt{font-size:12px;line-height:16px;font-weight:500;color:var(--mute)}#detail dd{margin:2px 0 0;font-size:14px;line-height:20px}
+#detail h3 .gr{color:var(--mute);font-weight:500}.links{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}.links a{font-size:14px;line-height:20px;font-weight:600;text-decoration:none;border-bottom:1px solid var(--acc)}
+.controls{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px}
+select,input{font:500 14px/20px Manrope,sans-serif;padding:8px 12px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink)}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:14px;line-height:20px}
+th,td{text-align:left;padding:12px 8px;border-bottom:1px solid var(--line);white-space:nowrap}th{font-size:12px;line-height:16px;font-weight:600;color:var(--mute);cursor:pointer;user-select:none}
+tbody tr{cursor:pointer;transition:background .3s var(--ease)}tbody tr:hover{background:color-mix(in srgb,var(--acc) 7%,transparent)}
+.pill{display:inline-block;font-size:12px;line-height:16px;font-weight:500;padding:2px 8px;border-radius:9999px;border:1px solid var(--line)}.pill.gap{border-color:var(--acc);color:var(--acc)}
+.num{font-variant-numeric:tabular-nums}
+.val{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.val .card b{display:block;font-size:30px;line-height:36px;font-weight:600}.val .card p{margin:8px 0 0;font-size:14px;line-height:20px;color:var(--mute)}
+.dark{background:var(--dark);color:#F4EFE6;border-radius:24px;padding:48px}.dark h2{color:#F4EFE6}.dark p,.dark li{color:#BDB7AA}.dark ul{margin:0;padding-left:20px;display:grid;gap:12px;font-size:14px;line-height:20px}
+footer{padding:48px 0 64px;font-size:12px;line-height:16px;color:var(--mute)}footer p{max-width:760px}
+.rise{opacity:0;transform:translateY(32px);transition:opacity .7s var(--ease),transform .7s var(--ease)}.rise.in{opacity:1;transform:none}
+/* claymorphism */
+:root{--clay:12px 12px 28px rgba(120,96,60,.22),-10px -10px 24px rgba(255,255,255,.85),inset 3px 3px 6px rgba(255,255,255,.9),inset -4px -4px 8px rgba(120,96,60,.10)}
+:root[data-theme="dark"]{--clay:12px 12px 28px rgba(0,0,0,.6),-8px -8px 20px rgba(255,255,255,.04),inset 2px 2px 4px rgba(255,255,255,.06),inset -3px -3px 6px rgba(0,0,0,.4)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--clay:12px 12px 28px rgba(0,0,0,.6),-8px -8px 20px rgba(255,255,255,.04),inset 2px 2px 4px rgba(255,255,255,.06),inset -3px -3px 6px rgba(0,0,0,.4)}}
+.k,.card,.step{border:0;border-radius:32px;box-shadow:var(--clay);transition:transform .5s var(--ease)}
+.k:hover,.step:hover{transform:translateY(-6px)}
+.btn{border-radius:16px;box-shadow:6px 6px 14px rgba(0,0,0,.25),inset 2px 2px 4px rgba(255,255,255,.18),inset -3px -3px 6px rgba(0,0,0,.35)}
+.btn.ghost{box-shadow:var(--clay);border:0;background:var(--card)}
+.btn.o{background:var(--acc);border-color:var(--acc);color:#fff;box-shadow:6px 6px 16px rgba(232,89,12,.35),inset 2px 2px 4px rgba(255,255,255,.35),inset -3px -3px 6px rgba(120,40,0,.35)}
+nav .bar{border:0;box-shadow:var(--clay)}
+.dark{border-radius:40px;box-shadow:16px 16px 40px rgba(0,0,0,.3),inset 3px 3px 8px rgba(255,255,255,.08),inset -4px -4px 10px rgba(0,0,0,.6)}
+select,input{border:0;border-radius:16px;box-shadow:inset 4px 4px 8px rgba(120,96,60,.15),inset -4px -4px 8px rgba(255,255,255,.7)}
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center}.hero .kpis{grid-column:1/-1}
+.specimen{position:relative;height:420px}
+.blob{position:absolute;border-radius:40px;background:var(--card);box-shadow:var(--clay);padding:24px;animation:float 7s var(--ease) infinite alternate}
+.blob.a{left:0;top:16px;width:78%;z-index:2}.blob.b{right:0;top:220px;width:64%;animation-delay:-3s;background:var(--ink);color:var(--bg)}
+.blob.c{right:8%;top:-8px;width:88px;height:88px;border-radius:9999px;padding:0;background:var(--acc);animation-delay:-5s;box-shadow:10px 10px 24px rgba(232,89,12,.35),inset 4px 4px 10px rgba(255,255,255,.4),inset -6px -6px 12px rgba(120,40,0,.35)}
+.blob .lab{font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.blob .gk{font-size:30px;line-height:36px;font-weight:600;margin:8px 0 4px}.blob .sci{font-size:14px;line-height:20px;color:var(--mute)}
+.blob .row{display:flex;justify-content:space-between;font-size:14px;line-height:20px;margin-top:12px}
+.blob.b .big{font-size:48px;line-height:48px;font-weight:600;color:var(--acc)}.blob.b p{margin:8px 0 0;font-size:14px;line-height:20px;color:#BDB7AA}
+@keyframes float{from{transform:translateY(0) rotate(-1deg)}to{transform:translateY(-14px) rotate(1deg)}}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.specimen{height:400px}}
+@media (prefers-reduced-motion:reduce){.blob{animation:none}}
+@media (prefers-reduced-motion:reduce){.rise{opacity:1;transform:none;transition:none}.reveal .w{opacity:1;transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#atlas">Skip to the atlas</a>
+<nav aria-label="Primary"><div class="bar"><a class="brand" href="#top">Rhizotomos<span>.</span></a><a href="#method">Method</a><a href="#atlas">Atlas</a><a href="#validation">Validation</a><a href="https://github.com/Arnav020/rhizotomos" target="_blank" rel="noopener">Code</a></div></nav>
+<main id="top">
+<header class="wrap hero">
+  <div>
+  <div class="eyebrow">EthnoHack 2026 · Track 1 · Traditional knowledge</div>
+  <h1>Which ancient remedies<br>did science never test?</h1>
+  <p class="lede">Rhizotomos audits therapeutic claims from Dioscorides' <span style="font-weight:600">De Materia Medica</span>, the pharmacology reference used for 1,500 years. Each claim is linked to a modern taxon through GBIF, checked against live PubMed evidence and tested against its own negative controls.</p>
+  <div class="cta"><a class="btn o" href="#atlas">Explore the atlas</a><a class="btn ghost" href="#validation">See the validation</a></div>
+  </div>
+  <div class="specimen" aria-hidden="true">
+    <div class="blob c"></div>
+    <div class="blob a"><div class="lab">Dioscorides, book III</div><div class="gk">γεντιανή · gentianē</div><div class="sci">Gentiana lutea · Gentianaceae · GBIF exact match</div>
+      <div class="row"><span>Claim</span><b>good for the stomach</b></div><div class="row"><span>PubMed records</span><b id="h-rec">20</b></div><div class="row"><span>Clinical trials</span><b style="color:var(--acc)">0</b></div></div>
+    <div class="blob b"><div class="big" id="h-lift">12×</div><p>more specific than its own negative controls. Documented for 2,000 years, never tested in humans.</p></div>
+  </div>
+  <div class="kpis" id="kpis"></div>
+</header>
+
+<section class="wrap reveal-sec" aria-label="Core idea"><p class="reveal" id="reveal">Two thousand years of documented use. Hundreds of lab papers. Not one human trial. That gap is where the next clinical study should start.</p></section>
+
+<section class="wrap rise" id="method">
+  <div class="eyebrow">01 · Method</div>
+  <h2>Four steps from a Greek plant name to a research priority</h2>
+  <p class="sec-lede">Every number on this page comes from an open API call that you can rerun. Every formula is in <a href="https://github.com/Arnav020/rhizotomos/blob/main/src/score.py">score.py</a>.</p>
+  <div class="steps">
+    <div class="step"><div class="n">Step 1</div><h3>Read the claim</h3><p>Greek name, paraphrased use and two doubt flags: is the plant identification secure, and is the reading of the claim secure?</p></div>
+    <div class="step"><div class="n">Step 2</div><h3>Resolve the taxon</h3><p>The GBIF Backbone gives the accepted name, family, match confidence and occurrence records worldwide and in Greece.</p></div>
+    <div class="step"><div class="n">Step 3</div><h3>Weigh the evidence</h3><p>PubMed counts records, clinical trials and systematic reviews, then divides by the plant's total literature to cancel popularity bias.</p></div>
+    <div class="step"><div class="n">Step 4</div><h3>Score the gap</h3><p>Preclinical signal × lack of trials × certainty. Each plant is compared with its own unrelated use controls.</p></div>
+  </div>
+</section>
+
+<section class="wrap rise" id="atlas">
+  <div class="eyebrow">02 · Atlas</div>
+  <h2>Every claim, its evidence and its doubts in one view</h2>
+  <p class="sec-lede">The bottom right of the map holds claims with plenty of laboratory work and no clinical trial. Click a point or a row to open the full record.</p>
+  <div class="grid">
+    <div class="card"><h3>Historical claim vs modern evidence</h3>
+      <div class="legend"><span><i class="sw" style="background:var(--t0)"></i>Tier 0 none</span><span><i class="sw" style="background:var(--t1)"></i>1 preclinical</span><span><i class="sw" style="background:var(--t2)"></i>2 clinical trial</span><span><i class="sw" style="background:var(--t3)"></i>3 trial and review</span><span><i class="sw" style="background:var(--acc)"></i>Translational gap</span></div>
+      <svg id="plot" viewBox="0 0 560 390" width="100%" role="img" aria-label="Scatter plot of PubMed records against clinical trials for each claim"></svg>
+    </div>
+    <div class="card" id="detail" aria-live="polite"></div>
+  </div>
+  <div class="card" style="margin-top:16px">
+    <div class="controls"><input id="q" aria-label="Search" placeholder="Search plant, Greek name or use"><select id="fs" aria-label="Filter by status"><option value="">All statuses</option></select><select id="fc" aria-label="Filter by use"><option value="">All uses</option></select></div>
+    <div class="tw"><table id="tbl"><thead><tr><th data-k="id">ID</th><th data-k="greek_name">Greek</th><th data-k="candidate_binomial">Taxon</th><th data-k="indication_category">Use</th><th data-k="pair_all">Records</th><th data-k="pair_clinical">Trials</th><th data-k="pair_synthesis">Reviews</th><th data-k="lift">Lift</th><th data-k="certainty">Certainty</th><th data-k="translational_gap">Gap</th><th data-k="status">Status</th></tr></thead><tbody></tbody></table></div>
+  </div>
+</section>
+
+<section class="wrap rise" id="validation">
+  <div class="eyebrow">03 · Validation</div>
+  <h2>The signal holds up against controls, doubt and regulators</h2>
+  <p class="sec-lede">A famous plant shows up in many papers whatever you search for. So each plant is compared with itself: the same taxon paired with two unrelated uses drawn with a fixed seed.</p>
+  <div class="val" id="val"></div>
+</section>
+
+<section class="wrap rise">
+  <div class="dark">
+    <div class="eyebrow">04 · Limits</div>
+    <h2>What this atlas does not claim</h2>
+    <ul>
+      <li>Literature co-occurrence measures research attention, not efficacy or safety. Trial counts say nothing about trial results.</li>
+      <li>GBIF matched every name with 99 to 100% confidence, yet several historical identifications are disputed. Modern taxonomy cannot see that problem, so we record it in the data.</li>
+      <li>Some evidence migrated into isolated compounds such as morphine and scopolamine. Plant name queries miss it, so those claims are labelled as translated via compound and are not counted as gaps.</li>
+      <li>The seed table paraphrases a public domain text and needs verification against the Wellmann edition. Mandragora, Hyoscyamus, Veratrum and Colchicum are highly toxic. Nothing here is medical advice.</li>
+    </ul>
+  </div>
+</section>
+</main>
+<footer class="wrap"><p>Data: GBIF Backbone Taxonomy and occurrence API (CC BY 4.0, gbif.org) · NCBI PubMed E-utilities (counts only) · claims paraphrased from Dioscorides, De Materia Medica (public domain) · EMA/HMPC monograph overlap flags curated by the team. Code under the MIT licence. Research prototype by Arnav Joshi for EthnoHack 2026.</p><p><a href="https://github.com/Arnav020/rhizotomos">Source and licences</a> · <a href="https://github.com/Arnav020/rhizotomos#assumptions-limitations-uncertainty">Limitations</a></p></footer>
+<script src="data.js"></script>
+<script>
+const D=window.RHIZO,R=D.rows,V=D.validation;
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const isGap=r=>r.status==='Translational gap';
+const COL=r=>isGap(r)?css('--acc'):css(['--t0','--t1','--t2','--t3'][r.modern_tier]);
+const f=(x,d=2)=>Number(x).toFixed(d),pv=p=>p<0.001?'< 0.001':f(p,3);
+const gaps=R.filter(isGap);
+document.getElementById('kpis').innerHTML=[
+ [R.length,'Dioscoridean claims audited',''],
+ [R.filter(r=>r.modern_tier>=2).length,'reached a human clinical trial',''],
+ [gaps.length,'translational gaps: 20+ papers, zero trials','o'],
+ [`${V.claims_more_specific_than_controls}/${V.n_claims}`,`claims beat their own controls, p ${pv(V.signflip_permutation_p)}`,'']
+].map(([b,s,c])=>`<div class="k"><b class="${c}">${b}</b><span>${s}</span></div>`).join('');
+// tagline reveal
+const rv=document.getElementById('reveal');rv.innerHTML=rv.textContent.split(' ').map(w=>`<span class="w${/trial|gap/.test(w)?' acc':''}">${w}</span>`).join(' ');
+const ws=[...rv.querySelectorAll('.w')];let tick=false;
+function upd(){const line=innerHeight*0.72;ws.forEach(w=>{if(w.getBoundingClientRect().top<line)w.classList.add('on')});tick=false}
+addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});upd();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.rise').forEach(el=>io.observe(el));
+// scatter
+const svg=document.getElementById('plot'),W=560,H=390,P={l:46,r:16,t:16,b:40};
+const lx=v=>Math.log10(v+1),mx=Math.max(...R.map(r=>lx(r.pair_all))),my=Math.max(...R.map(r=>lx(r.pair_clinical)));
+const X=v=>P.l+lx(v)/mx*(W-P.l-P.r),Y=v=>H-P.b-lx(v)/my*(H-P.t-P.b);
+let s='';[0,1,10,100,1000].filter(v=>lx(v)<=mx+.01).forEach(v=>{s+=`<line x1="${X(v)}" x2="${X(v)}" y1="${P.t}" y2="${H-P.b}" stroke="${css('--line')}"/><text x="${X(v)}" y="${H-P.b+16}" text-anchor="middle">${v}</text>`});
+[0,1,10].filter(v=>lx(v)<=my+.01).forEach(v=>{s+=`<line x1="${P.l}" x2="${W-P.r}" y1="${Y(v)}" y2="${Y(v)}" stroke="${css('--line')}"/><text x="${P.l-8}" y="${Y(v)+4}" text-anchor="end">${v}</text>`});
+s+=`<rect x="${X(20)}" y="${Y(0)-22}" width="${W-P.r-X(20)}" height="30" rx="6" fill="${css('--acc')}" opacity=".1"/><text x="${W-P.r-6}" y="${Y(0)-28}" text-anchor="end" style="fill:${css('--acc')};font-weight:600">translational gap zone</text>`;
+s+=`<text x="${(W+P.l)/2}" y="${H-6}" text-anchor="middle">PubMed records, taxon and historical use (log)</text><text transform="translate(12,${H/2}) rotate(-90)" text-anchor="middle">clinical trials (log)</text>`;
+R.forEach((r,i)=>{const j=((i*37)%11-5)*1.3;s+=`<circle class="dot" data-i="${i}" cx="${X(r.pair_all)+j}" cy="${Y(r.pair_clinical)-j/2}" r="${4+r.certainty*7}" fill="${COL(r)}"><title>${r.candidate_binomial}, ${r.indication_category}</title></circle>`});
+svg.innerHTML=s;svg.addEventListener('click',e=>{if(e.target.dataset.i)show(+e.target.dataset.i)});
+function show(i){const r=R[i];document.querySelectorAll('.dot').forEach(d=>d.classList.toggle('sel',+d.dataset.i===i));
+const pm=encodeURIComponent(`"${r.candidate_binomial}"[tiab] AND ${r.pubmed_indication_query}`);
+document.getElementById('detail').innerHTML=`<span class="tag ${isGap(r)?'gap':''}">${r.status}</span>
+<h3 style="margin-top:12px">${r.candidate_binomial} <span class="gr">· ${r.greek_name}</span></h3>
+<dl><dt>Dioscorides says</dt><dd>${r.dmm_indication}</dd>
+<dt>Modern evidence in PubMed</dt><dd class="num">${r.pair_all} records · ${r.pair_clinical} clinical trials · ${r.pair_synthesis} systematic reviews · tier ${r.modern_tier}</dd>
+<dt>Specificity against own controls</dt><dd class="num">${f(r.specificity*100)}% of ${r.taxon_total} papers vs ${f(r.background_specificity*100)}% for unrelated uses · lift ${f(r.lift,1)}×</dd>
+<dt>Certainty</dt><dd class="num">name ${r.name_certainty} · reading ${r.claim_confidence} · GBIF ${r.gbif_match_type.toLowerCase()} ${r.gbif_confidence}% → ${f(r.certainty)}</dd>
+${r.compound_route?`<dt>Compound route</dt><dd>${r.compound_route}</dd>`:''}
+<dt>EU herbal monograph</dt><dd>${r.ema_hmpc_overlap?'Overlaps an EMA/HMPC indication':'No overlapping EMA/HMPC indication'}</dd>
+<dt>Biodiversity records (GBIF)</dt><dd class="num">${(r.occ_global||0).toLocaleString()} worldwide · ${(r.occ_greece||0).toLocaleString()} in Greece · ${r.supply_flag}</dd>
+<dt>Curator note</dt><dd>${r.curation_note||'None'}</dd></dl>
+<div class="links"><a target="_blank" rel="noopener" href="https://pubmed.ncbi.nlm.nih.gov/?term=${pm}">Open the exact PubMed query</a><a target="_blank" rel="noopener" href="https://www.gbif.org/species/${r.gbif_key}">View on GBIF</a></div>`}
+let sk='translational_gap',sd=-1;const tb=document.querySelector('#tbl tbody'),fs=document.getElementById('fs'),fc=document.getElementById('fc');
+[...new Set(R.map(r=>r.status))].forEach(v=>fs.innerHTML+=`<option>${v}</option>`);[...new Set(R.map(r=>r.indication_category))].sort().forEach(v=>fc.innerHTML+=`<option>${v}</option>`);
+function draw(){const q=document.getElementById('q').value.toLowerCase();
+const rows=R.map((r,i)=>({...r,_i:i})).filter(r=>(!fs.value||r.status===fs.value)&&(!fc.value||r.indication_category===fc.value)&&(!q||JSON.stringify(r).toLowerCase().includes(q))).sort((a,b)=>(a[sk]>b[sk]?1:a[sk]<b[sk]?-1:0)*sd);
+tb.innerHTML=rows.length?rows.map(r=>`<tr tabindex="0" data-i="${r._i}"><td>${r.id}</td><td>${r.greek_name}</td><td>${r.candidate_binomial}</td><td>${r.indication_category}</td><td class="num">${r.pair_all}</td><td class="num">${r.pair_clinical}</td><td class="num">${r.pair_synthesis}</td><td class="num">${f(r.lift,1)}×</td><td class="num">${f(r.certainty)}</td><td class="num"><b>${f(r.translational_gap,3)}</b></td><td><span class="pill ${isGap(r)?'gap':''}">${r.status}</span></td></tr>`).join(''):`<tr><td colspan="11">No claim matches this search. Clear the filters to see all ${R.length} claims.</td></tr>`}
+const pick=e=>{const tr=e.target.closest('tr[data-i]');if(tr){show(+tr.dataset.i);document.getElementById('atlas').scrollIntoView({behavior:'smooth'})}};
+tb.addEventListener('click',pick);tb.addEventListener('keydown',e=>{if(e.key==='Enter')pick(e)});
+document.querySelectorAll('th').forEach(th=>th.onclick=()=>{const k=th.dataset.k;sd=k===sk?-sd:-1;sk=k;draw()});
+['q','fs','fc'].forEach(id=>document.getElementById(id).oninput=draw);draw();
+const hero=R.find(r=>r.id==='D23')||gaps[0];show(R.indexOf(hero));
+document.getElementById('val').innerHTML=[
+ [`${V.claims_more_specific_than_controls} of ${V.n_claims}`,`claims are more specific than their own negative controls. Median lift ${f(V.median_lift,1)}×. Wilcoxon p ${pv(V.wilcoxon_p)}, sign flip permutation p ${pv(V.signflip_permutation_p)} over 20,000 permutations.`],
+ [`p ${pv(V.robust_wilcoxon_p)}`,`The result still holds after dropping low certainty identifications such as thymon and silphion (n = ${V.robust_high_medium_names_n}).`],
+ [`AUC ${f(V.hmpc_tier_auc)}`,`Claims that overlap a current EU herbal monograph (n = ${V.hmpc_overlap_n}) sit in higher evidence tiers. Mann Whitney p ${pv(V.hmpc_mannwhitney_p)}. This is an independent regulatory check.`]
+].map(([b,p])=>`<div class="card"><b>${b}</b><p>${p}</p></div>`).join('');
+</script>
+</body>
+</html>
